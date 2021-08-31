@@ -1,7 +1,8 @@
 const app = Vue.createApp({
     data() {
         return {
-            propiedad: 'hollaaa',
+            frase1: 'Esta es la primera frase',
+            frase2: 'Esta es la segunda frase',
             vuelink: 'https://vuejs.org/'
         }
     },
@@ -9,9 +10,9 @@ const app = Vue.createApp({
         outpuGoal() {
             const randomNumber = Math.random();
             if (randomNumber < 0.5) {
-                return 'Learn Vue!';
+                return this.frase1;
             } else {
-                return 'Master Vue!';
+                return this.frase2;
             }
         }
     }
