@@ -2,7 +2,7 @@ const app = Vue.createApp({
     data() {
         return {
             frase1: 'Esta es la primera frase',
-            frase2: 'Esta es la segunda frase',
+            frase2: '<h1>Esta es la segunda frase </h1>',
             vuelink: 'https://vuejs.org/'
         }
     },
