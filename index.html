@@ -18,17 +18,17 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="add(10)">Add 10</button>
-      <button v-on:click="reduce(5)">Subtract 5</button>
+      <button @click="add(10)">Add 10</button>
+      <button @click="reduce(5)">Subtract 5</button>
       <p>Result: {{ counter }}</p>
-      <input type="text" v-bind:value="name" v-on:input="setName($event)">
+      <input type="text" :value="name" @input="setName($event)">
       <input type="text" v-model="name2">
       <input type="text" v-model="lastname">
       <p>Your Name with Data: {{ name }}</p>
       <p>Your Name with Data: {{ name2 }}</p>
       <p>Your Name with Method: {{ fullname }}</p>
-      <button v-on:click="resetInput">Reset</button>
-      <button v-on:click="resetInput2">Reset</button>
+      <button @click="resetInput">Reset</button>
+      <button @click="resetInput2">Reset</button>
     </section>
   </body>
 </html>
