@@ -7,6 +7,13 @@ const app = Vue.createApp({
         };
     },
     methods: {
+        outpuFullName() {
+            console.log("Veces que se ejecuta este metodo");
+            if (this.name === '') {
+                return '';
+            }
+            return this.name + '' + 'apellido';
+        },
         //Al escribir el valor del input me lo guarda en SetName GUARDA
         //El v-bind me actualiza el input con el Reset ENVIA
         setName(event) {
