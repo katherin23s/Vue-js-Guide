@@ -40,6 +40,15 @@ const app = Vue.createApp({
             //v-model = name hace la union en nuevo valor en input y envia
             this.name2 = '';
         }
+    },
+    computed: {
+        fullname() {
+            console.log("Veces que se ejecuta este metodo");
+            if (this.name === '') {
+                return '';
+            }
+            return this.name + '' + 'apellido';
+        }
     }
 });
 
