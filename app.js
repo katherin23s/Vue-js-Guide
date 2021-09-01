@@ -24,7 +24,9 @@ const app = Vue.createApp({
     },
 
     computed: {
-
+        boxAClases(){
+            return { active: this.boxASelected};
+        }
     }
 });
 
