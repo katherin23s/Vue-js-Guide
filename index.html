@@ -14,21 +14,12 @@
   </head>
   <body>
     <header>
-      <h1>Vue Events</h1>
+      <h1>Vue Dynamic Styling</h1>
     </header>
-    <section id="events">
-      <h2>Events in Action</h2>
-      <button @click="add(10)">Add 10</button>
-      <button @click="reduce(5)">Subtract 5</button>
-      <p>Result: {{ counter }}</p>
-      <input type="text" :value="name" @input="setName($event)">
-      <input type="text" v-model="name2">
-      <input type="text" v-model="lastname">
-      <p>Your Name with Data: {{ name }}</p>
-      <p>Your Name with Data: {{ name2 }}</p>
-      <p>Your Name with Method: {{ fullname }}</p>
-      <button @click="resetInput">Reset</button>
-      <button @click="resetInput2">Reset</button>
+    <section id="styling">
+      <div class="demo" :style="{borderColor: boxASelected ? 'red': '#ccc'}" @click="boxSelected('A')"></div>
+      <div class="demo" @click="boxSelected('B')"></div>
+      <div class="demo" @click="boxSelected('C')"></div>
     </section>
   </body>
 </html>
