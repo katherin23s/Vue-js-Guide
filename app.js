@@ -3,7 +3,9 @@ const app = Vue.createApp({
         return {
             counter: 0,
             name: '',
-            name2: ''
+            name2: '',
+            fullname: '',
+            lastname: ''
         };
     },
     methods: {
@@ -41,14 +43,41 @@ const app = Vue.createApp({
             this.name2 = '';
         }
     },
-    computed: {
-        fullname() {
-            console.log("Veces que se ejecuta este metodo");
-            if (this.name === '') {
-                return '';
+
+    watch: {
+        counter(value) {
+            if (value > 50) {
+                const that = this;
+                setTimeout(function () {
+                    that.counter = 0;
+                }, 2000);
             }
-            return this.name + '' + 'apellido';
+        },
+
+        name(value) {
+            if (value === '') {
+                this.fullname = '';
+            } else {
+                this.fullname = value + '' + this.lastname;
+            }
+        },
+        lastname(value) {
+            if (value === '') {
+                this.fullname = '';
+            } else {
+                this.fullname = this.name + ' ' + value;
+            }
         }
+    },
+
+    computed: {
+        /*  fullname() {
+              console.log("Veces que se ejecuta este metodo");
+              if (this.name === '') {
+                  return '';
+              }
+              return this.name + '' + 'apellido';
+          } */
     }
 });
 
