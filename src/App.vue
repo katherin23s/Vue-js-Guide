@@ -3,13 +3,14 @@
     <header>
       <h1>My Friends</h1>
     </header>
+    <new-frind @add-contact="addContact"> </new-frind>
     <ul>
       <friend-contact 
       v-for ="friend in friends " :key="friend.id"
       :id="friend.id"
       :name="friend.name" 
       :phone-number="friend.phone" 
-      :email-address="friend.Email"
+      :email-address="friend.email"
       :is-favorite="friend.isFavorite"
       @toggle-favorite="toggleFavoriteStatus" ></friend-contact>
     </ul>
@@ -48,6 +49,17 @@ export default {
       //De mi objeto friend especifico la propiedad isFavorite y le asigno el valor de lo contrario
       //de identifiedFriend
       identifiedFriend.isFavorite = !identifiedFriend.isFavorite;
+    },
+
+    addContact(name, phone, email){
+      const newFriendContact = {
+        id: new Date().toISOString(),
+        name:name,
+        phone: phone,
+        email: email,
+        isFavorite: false
+      };
+      this.friends.push(newFriendContact)
     }
   }
 };
@@ -79,7 +91,8 @@ header {
   padding: 0;
   list-style: none;
 }
-#app li {
+#app li, 
+#app form {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin: 1rem auto;
   border-radius: 10px;
@@ -109,4 +122,19 @@ header {
   border-color: #ec3169;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
 }
+#app input {
+  font: inherit;
+  padding: 0.15rem;
+}
+
+#app label {
+  font-weight: bold;
+  margin-right: 1rem;
+  widows: 7rem;
+}
+
+#app form div {
+  margin: 1rem 0;
+}
+
 </style>
