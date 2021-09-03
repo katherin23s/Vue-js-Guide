@@ -13,6 +13,9 @@
         {{ emailAddress }}
       </li>
     </ul>
+      <div>
+        <button @click="this.$emit('delete',id)">Delete contact</button>
+    </div>
   </li>
 </template>
 
